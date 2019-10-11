@@ -14,20 +14,17 @@ public class Prepayment implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(name = "PREPAYMENT_ID_GENERATOR", sequenceName = "PREPAYMENT_ID_SEQ")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "MinAmount")
-	private java.lang.Long minAmount;
-
-	@org.kie.api.definition.type.Label(value = "Max Amount")
-	private java.lang.Long maxAmount;
-
-	@org.kie.api.definition.type.Label(value = "Start Date")
+	@org.kie.api.definition.type.Label("Start Date")
 	private java.time.LocalDate startDate;
 
-	@org.kie.api.definition.type.Label(value = "End Date")
+	@org.kie.api.definition.type.Label("End Date")
 	private java.time.LocalDate endDate;
 
-	@org.kie.api.definition.type.Label(value = "Total interest")
+	@org.kie.api.definition.type.Label("Total interest")
 	private java.lang.Integer totalInterest;
+
+	@org.kie.api.definition.type.Label(value = "Amount")
+	private java.lang.Long amount;
 
 	public Prepayment() {
 	}
@@ -38,22 +35,6 @@ public class Prepayment implements java.io.Serializable {
 
 	public void setId(java.lang.Long id) {
 		this.id = id;
-	}
-
-	public java.lang.Long getMinAmount() {
-		return this.minAmount;
-	}
-
-	public void setMinAmount(java.lang.Long minAmount) {
-		this.minAmount = minAmount;
-	}
-
-	public java.lang.Long getMaxAmount() {
-		return this.maxAmount;
-	}
-
-	public void setMaxAmount(java.lang.Long maxAmount) {
-		this.maxAmount = maxAmount;
 	}
 
 	public java.time.LocalDate getStartDate() {
@@ -80,15 +61,22 @@ public class Prepayment implements java.io.Serializable {
 		this.totalInterest = totalInterest;
 	}
 
-	public Prepayment(java.lang.Long id, java.lang.Long minAmount,
-			java.lang.Long maxAmount, java.time.LocalDate startDate,
-			java.time.LocalDate endDate, java.lang.Integer totalInterest) {
+	public java.lang.Long getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(java.lang.Long amount) {
+		this.amount = amount;
+	}
+
+	public Prepayment(java.lang.Long id, java.time.LocalDate startDate,
+			java.time.LocalDate endDate, java.lang.Integer totalInterest,
+			java.lang.Long amount) {
 		this.id = id;
-		this.minAmount = minAmount;
-		this.maxAmount = maxAmount;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.totalInterest = totalInterest;
+		this.amount = amount;
 	}
 
 }
