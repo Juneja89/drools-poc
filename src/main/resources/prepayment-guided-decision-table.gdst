@@ -23,7 +23,7 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>100</width>
+          <width>131</width>
           <header>Min Amount</header>
           <constraintValueType>1</constraintValueType>
           <factField>amount</factField>
@@ -38,7 +38,7 @@
             <isOtherwise>false</isOtherwise>
           </typedDefaultValue>
           <hideColumn>false</hideColumn>
-          <width>100</width>
+          <width>162</width>
           <header>Max Amount</header>
           <constraintValueType>1</constraintValueType>
           <factField>amount</factField>
@@ -60,7 +60,7 @@
         <isOtherwise>false</isOtherwise>
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
-      <width>100</width>
+      <width>225</width>
       <header>Total Interest</header>
       <boundName>prepayment</boundName>
       <factField>totalInterest</factField>
