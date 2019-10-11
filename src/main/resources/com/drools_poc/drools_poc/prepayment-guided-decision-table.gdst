@@ -19,7 +19,7 @@
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
       <width>100</width>
-      <attribute>no-loop</attribute>
+      <attribute>enabled</attribute>
       <reverseOrder>false</reverseOrder>
       <useRowNumber>false</useRowNumber>
     </attribute-column52>
@@ -32,7 +32,7 @@
       </typedDefaultValue>
       <hideColumn>false</hideColumn>
       <width>100</width>
-      <attribute>enabled</attribute>
+      <attribute>no-loop</attribute>
       <reverseOrder>false</reverseOrder>
       <useRowNumber>false</useRowNumber>
     </attribute-column52>
