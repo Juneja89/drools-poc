@@ -1,0 +1,38 @@
+import com.Prepayment;
+import com.LoanRateHistory;
+
+rule "Prepayment Calculation"
+mvel "java"
+when
+		prepayment : Prepayment( paymentType == "Prepayment" )
+	then
+	    
+		modify( prepayment ) {
+				setTotalFee( prepayment.getTotalInterest() * prepayment.getAmount() * prepayment.getDaysToTerminate() );
+		}
+end
+
+rule "Terminate Account Calculation"
+mvel "java"
+when
+		prepayment : Prepayment( paymentType == "Termination" )
+	then
+	    
+		modify( prepayment ) {
+				setTotalFee( 200000 - prepayment.getActualInterestPaid() );
+		}
+end
+
+rule "Terminate Actual lose of interest Calculation"
+mvel "java"
+when
+		prepayment : Prepayment( paymentType == "Termination Actual Loss Of Interest" )
+	then
+	    double totalFees = 0;
+	    for(LoanRateHistory loanRateHistory : prepayment.getLoanRateHistoryList()){
+	        totalFees += (loanRateHistory.getTotalAmountPaid() * (loanRateHistory.getRateOfInterest() / 100) * loanRateHistory.getTotalDays());
+	    }
+		modify( prepayment ) {
+				setTotalFee( totalFees );
+		}
+end
