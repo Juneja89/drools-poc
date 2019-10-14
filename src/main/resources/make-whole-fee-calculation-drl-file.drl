@@ -30,7 +30,7 @@ when
 	then
 	    double totalFees = 0;
 	    for(LoanRateHistory loanRateHistory : prepayment.getLoanRateHistoryList()){
-	        totalFees += (prepayment.getAmount() * (prepayment.getTotalInterest() / 100) * loanRateHistory.getTotalDays());
+	        totalFees += (loanRateHistory.getTotalAmountPaid() * (prepayment.getTotalInterest() / 100) * loanRateHistory.getTotalDays());
 	    }
 		modify( prepayment ) {
 				setTotalFee( totalFees );
