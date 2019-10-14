@@ -196,7 +196,7 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueString>formula  = no of disbursement * rate of interest / 100</valueString>
+        <valueString>formula  = no of disbursements * rate of interest / 100</valueString>
         <dataType>STRING</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
