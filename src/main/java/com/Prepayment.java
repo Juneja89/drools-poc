@@ -26,17 +26,21 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("No Of Months")
 	private java.lang.Integer noOfMonths;
 
-	@org.kie.api.definition.type.Label(value = "Days To Terminate")
+	@org.kie.api.definition.type.Label("Days To Terminate")
 	private java.lang.Integer daysToTerminate;
 
-	@org.kie.api.definition.type.Label(value = "Actual Interest Paid")
+	@org.kie.api.definition.type.Label("Actual Interest Paid")
 	private java.lang.Double actualInterestPaid;
 
-	@org.kie.api.definition.type.Label(value = "Total Fee")
+	@org.kie.api.definition.type.Label("Total Fee")
 	private java.lang.Double totalFee;
 
-	@org.kie.api.definition.type.Label(value = "Payment Type")
+	@org.kie.api.definition.type.Label("Payment Type")
 	private java.lang.String paymentType;
+
+	@javax.persistence.OneToMany(fetch = javax.persistence.FetchType.EAGER, cascade = {javax.persistence.CascadeType.ALL})
+	@org.kie.api.definition.type.Label(value = "Loan rate History List")
+	private java.util.List<com.LoanRateHistory> loanRateHistoryList;
 
 	public Prepayment() {
 	}
@@ -113,11 +117,21 @@ public class Prepayment implements java.io.Serializable {
 		this.paymentType = paymentType;
 	}
 
+	public java.util.List<com.LoanRateHistory> getLoanRateHistoryList() {
+		return this.loanRateHistoryList;
+	}
+
+	public void setLoanRateHistoryList(
+			java.util.List<com.LoanRateHistory> loanRateHistoryList) {
+		this.loanRateHistoryList = loanRateHistoryList;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Double amount, java.time.LocalDate date,
 			java.lang.Integer noOfMonths, java.lang.Integer daysToTerminate,
 			java.lang.Double actualInterestPaid, java.lang.Double totalFee,
-			java.lang.String paymentType) {
+			java.lang.String paymentType,
+			java.util.List<com.LoanRateHistory> loanRateHistoryList) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -127,6 +141,7 @@ public class Prepayment implements java.io.Serializable {
 		this.actualInterestPaid = actualInterestPaid;
 		this.totalFee = totalFee;
 		this.paymentType = paymentType;
+		this.loanRateHistoryList = loanRateHistoryList;
 	}
 
 }
