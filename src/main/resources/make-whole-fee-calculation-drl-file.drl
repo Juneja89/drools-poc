@@ -40,6 +40,6 @@ when
 	    }
 	    System.out.println("totalFees3::"+totalFees);
 		modify( prepayment ) {
-				setTotalFee( totalFees );
+				setTotalFee( 10000.0 );
 		}
 end
