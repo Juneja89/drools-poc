@@ -27,7 +27,7 @@
           <header>Min Amount</header>
           <constraintValueType>1</constraintValueType>
           <factField>amount</factField>
-          <fieldType>Long</fieldType>
+          <fieldType>Double</fieldType>
           <operator>&gt;=</operator>
           <parameters/>
         </condition-column52>
@@ -42,7 +42,7 @@
           <header>Max Amount</header>
           <constraintValueType>1</constraintValueType>
           <factField>amount</factField>
-          <fieldType>Long</fieldType>
+          <fieldType>Double</fieldType>
           <operator>&lt;=</operator>
           <parameters/>
         </condition-column52>
@@ -146,21 +146,21 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="long">1</valueNumeric>
+        <valueNumeric class="double">1.0</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_LONG</dataType>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="long">100000</valueNumeric>
+        <valueNumeric class="double">100000.0</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_LONG</dataType>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="int">5</valueNumeric>
+        <valueNumeric class="double">5.0</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_INTEGER</dataType>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
     </list>
@@ -177,21 +177,52 @@
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="long">100001</valueNumeric>
+        <valueNumeric class="double">100001.0</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_LONG</dataType>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="long">200000</valueNumeric>
+        <valueNumeric class="double">200000.0</valueNumeric>
         <valueString></valueString>
-        <dataType>NUMERIC_LONG</dataType>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
       <value>
-        <valueNumeric class="int">10</valueNumeric>
+        <valueNumeric class="double">10.0</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_DOUBLE</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+    </list>
+    <list>
+      <value>
+        <valueNumeric class="int">3</valueNumeric>
         <valueString></valueString>
         <dataType>NUMERIC_INTEGER</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueString></valueString>
+        <dataType>STRING</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="double">200001.0</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_DOUBLE</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="double">300000.0</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_DOUBLE</dataType>
+        <isOtherwise>false</isOtherwise>
+      </value>
+      <value>
+        <valueNumeric class="double">15.0</valueNumeric>
+        <valueString></valueString>
+        <dataType>NUMERIC_DOUBLE</dataType>
         <isOtherwise>false</isOtherwise>
       </value>
     </list>
