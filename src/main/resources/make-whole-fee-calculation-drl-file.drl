@@ -36,12 +36,12 @@ when
 	    System.out.println("welcome to the Terminate Actual lose of interest Calculation..!!");
 	    double totalFees = 0.0;
 	    for(LoanRateHistory loanRateHistory : prepayment.getLoanRateHistoryList()){
-	    System.out.println("CalculateTotalFee1::"+prepayment.getCalculateTotalFee()+"::totalPaidAmount::"+loanRateHistory.getTotalAmountPaid()+"::rateOfInterest::"+loanRateHistory.getRateOfInterest()+"::totalDays::"+loanRateHistory.getTotalDays());
-	        prepayment.setCalculateTotalFee(loanRateHistory.getTotalAmountPaid() * (loanRateHistory.getRateOfInterest() / 100) * (loanRateHistory.getTotalDays() / 360));
-	        System.out.println("CalculateTotalFee2::"+prepayment.getCalculateTotalFee());
+	    System.out.println("totalFees1::"+totalFees+"::totalPaidAmount::"+loanRateHistory.getTotalAmountPaid()+"::rateOfInterest::"+loanRateHistory.getRateOfInterest()+"::totalDays::"+loanRateHistory.getTotalDays());
+	        totalFees = (loanRateHistory.getTotalAmountPaid() * (loanRateHistory.getRateOfInterest() / 100) * (loanRateHistory.getTotalDays() / 360));
+	        System.out.println("totalFees2::"+totalFees);
 	    }
-	    System.out.println("CalculateTotalFee3::"+prepayment.getCalculateTotalFee());
+	    System.out.println("totalFees3::"+totalFees);
 		modify( prepayment ) {
-				setTotalFee( prepayment.getCalculateTotalFee() );
+				setTotalFee( totalFees );
 		}
 end
