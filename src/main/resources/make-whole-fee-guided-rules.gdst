@@ -47,7 +47,7 @@
           <fieldValues>
             <org.drools.workbench.models.datamodel.rule.ActionFieldValue>
               <field>totalFee</field>
-              <value>prepayment.getTotalFee();</value>
+              <value>prepayment.getCalculateTotalFee();</value>
               <nature>3</nature>
               <type>Double</type>
             </org.drools.workbench.models.datamodel.rule.ActionFieldValue>
@@ -58,7 +58,7 @@
       <childColumns>
         <org.drools.workbench.models.guided.dtable.shared.model.BRLActionVariableColumn>
           <hideColumn>false</hideColumn>
-          <width>215</width>
+          <width>100</width>
           <header>Total Fee</header>
           <varName></varName>
           <fieldType>Boolean</fieldType>
