@@ -26,6 +26,18 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("No Of Months")
 	private java.lang.Integer noOfMonths;
 
+	@org.kie.api.definition.type.Label(value = "Days To Terminate")
+	private java.lang.Integer daysToTerminate;
+
+	@org.kie.api.definition.type.Label(value = "Actual Interest Paid")
+	private java.lang.Double actualInterestPaid;
+
+	@org.kie.api.definition.type.Label(value = "Total Fee")
+	private java.lang.Double totalFee;
+
+	@org.kie.api.definition.type.Label(value = "Payment Type")
+	private java.lang.String paymentType;
+
 	public Prepayment() {
 	}
 
@@ -69,14 +81,52 @@ public class Prepayment implements java.io.Serializable {
 		this.amount = amount;
 	}
 
+	public java.lang.Integer getDaysToTerminate() {
+		return this.daysToTerminate;
+	}
+
+	public void setDaysToTerminate(java.lang.Integer daysToTerminate) {
+		this.daysToTerminate = daysToTerminate;
+	}
+
+	public java.lang.Double getActualInterestPaid() {
+		return this.actualInterestPaid;
+	}
+
+	public void setActualInterestPaid(java.lang.Double actualInterestPaid) {
+		this.actualInterestPaid = actualInterestPaid;
+	}
+
+	public java.lang.Double getTotalFee() {
+		return this.totalFee;
+	}
+
+	public void setTotalFee(java.lang.Double totalFee) {
+		this.totalFee = totalFee;
+	}
+
+	public java.lang.String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(java.lang.String paymentType) {
+		this.paymentType = paymentType;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Double amount, java.time.LocalDate date,
-			java.lang.Integer noOfMonths) {
+			java.lang.Integer noOfMonths, java.lang.Integer daysToTerminate,
+			java.lang.Double actualInterestPaid, java.lang.Double totalFee,
+			java.lang.String paymentType) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
 		this.date = date;
 		this.noOfMonths = noOfMonths;
+		this.daysToTerminate = daysToTerminate;
+		this.actualInterestPaid = actualInterestPaid;
+		this.totalFee = totalFee;
+		this.paymentType = paymentType;
 	}
 
 }
