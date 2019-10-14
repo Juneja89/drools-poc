@@ -9,7 +9,7 @@ when
 	then
 	    System.out.println("welcome to the prepayment calculation..!!");
 		modify( prepayment ) {
-				setTotalFee( prepayment.getTotalInterest() * prepayment.getAmount() * prepayment.getDaysToTerminate() );
+				setTotalFee( (prepayment.getTotalInterest() / 100) * prepayment.getAmount() * prepayment.getDaysToTerminate() );
 		}
 end
 
