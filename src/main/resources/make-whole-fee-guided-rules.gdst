@@ -47,7 +47,7 @@
           <fieldValues>
             <org.drools.workbench.models.datamodel.rule.ActionFieldValue>
               <field>totalFee</field>
-              <value>prepayment.calculateFee();</value>
+              <value>prepayment.getTotalFee();</value>
               <nature>3</nature>
               <type>Double</type>
             </org.drools.workbench.models.datamodel.rule.ActionFieldValue>
