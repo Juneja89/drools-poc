@@ -2,7 +2,7 @@ import com.Prepayment;
 import com.LoanRateHistory;
 
 rule "Prepayment Calculation"
-    
+    agenda-group "loan calculation"
 when
 		prepayment : Prepayment( paymentType == "Prepayment" )
 	then
@@ -13,7 +13,7 @@ when
 end
 
 rule "Terminate Account Calculation"
-    
+    agenda-group "loan calculation"
 when
 		prepayment : Prepayment( paymentType == "Termination" )
 	then
@@ -24,7 +24,7 @@ when
 end
 
 rule "Terminate Actual lose of interest Calculation"
-   
+   agenda-group "loan calculation"
 when
 		prepayment : Prepayment( paymentType == "Termination Actual Loss Of Interest" )
 	then
