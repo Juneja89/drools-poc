@@ -50,7 +50,7 @@
           <className>java.lang.Integer</className>
           <factAlias>Prepayment</factAlias>
           <expressionAlias>noOfMonths</expressionAlias>
-          <columnWidth>185.5</columnWidth>
+          <columnWidth>411.5</columnWidth>
         </FactMapping>
         <FactMapping>
           <expressionElements>
@@ -72,7 +72,7 @@
           <className>double</className>
           <factAlias>Prepayment</factAlias>
           <expressionAlias>totalInterest</expressionAlias>
-          <columnWidth>185.5</columnWidth>
+          <columnWidth>411.5</columnWidth>
         </FactMapping>
       </factMappings>
       <type>RULE</type>
