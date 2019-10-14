@@ -6,7 +6,7 @@ rule "Prepayment Calculation"
 when
 		prepayment : Prepayment( paymentType == "Prepayment" )
 	then
-	    
+	    System.out.println("welcome to the prepayment calculation..!!");
 		modify( prepayment ) {
 				setTotalFee( prepayment.getTotalInterest() * prepayment.getAmount() * prepayment.getDaysToTerminate() );
 		}
