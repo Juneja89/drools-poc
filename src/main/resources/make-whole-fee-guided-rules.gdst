@@ -131,6 +131,9 @@
       <org.kie.soup.project.datamodel.imports.Import>
         <type>java.time.DayOfWeek</type>
       </org.kie.soup.project.datamodel.imports.Import>
+      <org.kie.soup.project.datamodel.imports.Import>
+        <type>com.Prepayment</type>
+      </org.kie.soup.project.datamodel.imports.Import>
     </imports>
   </imports>
   <packageName></packageName>
