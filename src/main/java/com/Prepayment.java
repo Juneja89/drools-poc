@@ -15,7 +15,7 @@ public class Prepayment implements java.io.Serializable {
 	private java.lang.Long id;
 
 	@org.kie.api.definition.type.Label("Total interest")
-	private java.lang.Integer totalInterest;
+	private double totalInterest;
 
 	@org.kie.api.definition.type.Label("Amount")
 	private java.lang.Long amount;
@@ -23,7 +23,7 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Date")
 	private java.time.LocalDate date;
 
-	@org.kie.api.definition.type.Label(value = "No Of Months")
+	@org.kie.api.definition.type.Label("No Of Months")
 	private java.lang.Integer noOfMonths;
 
 	public Prepayment() {
@@ -35,14 +35,6 @@ public class Prepayment implements java.io.Serializable {
 
 	public void setId(java.lang.Long id) {
 		this.id = id;
-	}
-
-	public java.lang.Integer getTotalInterest() {
-		return this.totalInterest;
-	}
-
-	public void setTotalInterest(java.lang.Integer totalInterest) {
-		this.totalInterest = totalInterest;
 	}
 
 	public java.lang.Long getAmount() {
@@ -69,7 +61,15 @@ public class Prepayment implements java.io.Serializable {
 		this.noOfMonths = noOfMonths;
 	}
 
-	public Prepayment(java.lang.Long id, java.lang.Integer totalInterest,
+	public double getTotalInterest() {
+		return this.totalInterest;
+	}
+
+	public void setTotalInterest(double totalInterest) {
+		this.totalInterest = totalInterest;
+	}
+
+	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Long amount, java.time.LocalDate date,
 			java.lang.Integer noOfMonths) {
 		this.id = id;
