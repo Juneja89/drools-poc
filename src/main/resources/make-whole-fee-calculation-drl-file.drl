@@ -35,7 +35,7 @@ when
 	    double totalFees = 0.0;
 	    for(LoanRateHistory loanRateHistory : prepayment.getLoanRateHistoryList()){
 	    System.out.println("totalFees1::"+totalFees+"::totalPaidAmount::"+loanRateHistory.getTotalAmountPaid()+"::rateOfInterest::"+loanRateHistory.getRateOfInterest()+"::totalDays::"+loanRateHistory.getTotalDays());
-	        totalFees += (loanRateHistory.getTotalAmountPaid() * (loanRateHistory.getRateOfInterest() / 100) * (loanRateHistory.getTotalDays() / 360));
+	        totalFees = (loanRateHistory.getTotalAmountPaid() * (loanRateHistory.getRateOfInterest() / 100) * (loanRateHistory.getTotalDays() / 360));
 	        System.out.println("totalFees2::"+totalFees);
 	    }
 	    System.out.println("totalFees3::"+totalFees);
