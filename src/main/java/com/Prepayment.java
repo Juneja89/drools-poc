@@ -38,9 +38,12 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Payment Type")
 	private java.lang.String paymentType;
 
+	@org.kie.api.definition.type.Label("Loan rate History List")
 	@javax.persistence.OneToMany(fetch = javax.persistence.FetchType.EAGER, cascade = {javax.persistence.CascadeType.ALL})
-	@org.kie.api.definition.type.Label(value = "Loan rate History List")
 	private java.util.List<com.LoanRateHistory> loanRateHistoryList;
+
+	@org.kie.api.definition.type.Label(value = "Calculate Total Fee")
+	private java.lang.Double calculateTotalFee;
 
 	public Prepayment() {
 	}
@@ -126,12 +129,21 @@ public class Prepayment implements java.io.Serializable {
 		this.loanRateHistoryList = loanRateHistoryList;
 	}
 
+	public java.lang.Double getCalculateTotalFee() {
+		return this.calculateTotalFee;
+	}
+
+	public void setCalculateTotalFee(java.lang.Double calculateTotalFee) {
+		this.calculateTotalFee = calculateTotalFee;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Double amount, java.time.LocalDate date,
 			java.lang.Integer noOfMonths, java.lang.Integer daysToTerminate,
 			java.lang.Double actualInterestPaid, java.lang.Double totalFee,
 			java.lang.String paymentType,
-			java.util.List<com.LoanRateHistory> loanRateHistoryList) {
+			java.util.List<com.LoanRateHistory> loanRateHistoryList,
+			java.lang.Double calculateTotalFee) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -142,6 +154,7 @@ public class Prepayment implements java.io.Serializable {
 		this.totalFee = totalFee;
 		this.paymentType = paymentType;
 		this.loanRateHistoryList = loanRateHistoryList;
+		this.calculateTotalFee = calculateTotalFee;
 	}
 
 }
