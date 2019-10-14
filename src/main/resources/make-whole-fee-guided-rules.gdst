@@ -43,11 +43,17 @@
       <width>-1</width>
       <header>Total Fee</header>
       <definition>
-        <org.drools.workbench.models.datamodel.rule.ActionCallMethod>
-          <fieldValues/>
+        <org.drools.workbench.models.datamodel.rule.ActionUpdateField>
+          <fieldValues>
+            <org.drools.workbench.models.datamodel.rule.ActionFieldValue>
+              <field>totalFee</field>
+              <value>prepayment.calculateFee()</value>
+              <nature>3</nature>
+              <type>Double</type>
+            </org.drools.workbench.models.datamodel.rule.ActionFieldValue>
+          </fieldValues>
           <variable>prepayment</variable>
-          <state>0</state>
-        </org.drools.workbench.models.datamodel.rule.ActionCallMethod>
+        </org.drools.workbench.models.datamodel.rule.ActionUpdateField>
       </definition>
       <childColumns>
         <org.drools.workbench.models.guided.dtable.shared.model.BRLActionVariableColumn>
