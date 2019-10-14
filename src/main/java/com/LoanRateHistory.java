@@ -14,20 +14,20 @@ public class LoanRateHistory implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(name = "LOANRATEHISTORY_ID_GENERATOR", sequenceName = "LOANRATEHISTORY_ID_SEQ")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Start Date")
+	@org.kie.api.definition.type.Label("Start Date")
 	private java.time.LocalDate startDate;
 
-	@org.kie.api.definition.type.Label(value = "End date")
+	@org.kie.api.definition.type.Label("End date")
 	private java.time.LocalDate endDate;
 
-	@org.kie.api.definition.type.Label(value = "Rate Of interest")
+	@org.kie.api.definition.type.Label("Rate Of interest")
 	private java.lang.Double rateOfInterest;
 
-	@org.kie.api.definition.type.Label(value = "Total Amount Paid")
+	@org.kie.api.definition.type.Label("Total Amount Paid")
 	private java.lang.Double totalAmountPaid;
 
-	@org.kie.api.definition.type.Label(value = "Total Days")
-	private java.lang.Integer totalDays;
+	@org.kie.api.definition.type.Label("Total Days")
+	private Double totalDays;
 
 	public LoanRateHistory() {
 	}
@@ -72,17 +72,17 @@ public class LoanRateHistory implements java.io.Serializable {
 		this.totalAmountPaid = totalAmountPaid;
 	}
 
-	public java.lang.Integer getTotalDays() {
+	public java.lang.Double getTotalDays() {
 		return this.totalDays;
 	}
 
-	public void setTotalDays(java.lang.Integer totalDays) {
+	public void setTotalDays(java.lang.Double totalDays) {
 		this.totalDays = totalDays;
 	}
 
 	public LoanRateHistory(java.lang.Long id, java.time.LocalDate startDate,
 			java.time.LocalDate endDate, java.lang.Double rateOfInterest,
-			java.lang.Double totalAmountPaid, java.lang.Integer totalDays) {
+			java.lang.Double totalAmountPaid, java.lang.Double totalDays) {
 		this.id = id;
 		this.startDate = startDate;
 		this.endDate = endDate;
