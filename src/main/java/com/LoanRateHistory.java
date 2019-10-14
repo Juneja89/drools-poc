@@ -7,29 +7,88 @@ package com;
 @javax.persistence.Entity
 public class LoanRateHistory implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(generator = "LOANRATEHISTORY_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "LOANRATEHISTORY_ID_GENERATOR", sequenceName = "LOANRATEHISTORY_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(generator = "LOANRATEHISTORY_ID_GENERATOR", strategy = javax.persistence.GenerationType.AUTO)
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "LOANRATEHISTORY_ID_GENERATOR", sequenceName = "LOANRATEHISTORY_ID_SEQ")
+	private java.lang.Long id;
 
-    public LoanRateHistory() {
-    }
-    
-    public LoanRateHistory(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Start Date")
+	private java.time.LocalDate startDate;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "End date")
+	private java.time.LocalDate endDate;
 
+	@org.kie.api.definition.type.Label(value = "Rate Of interest")
+	private java.lang.Double rateOfInterest;
 
+	@org.kie.api.definition.type.Label(value = "Total Amount Paid")
+	private java.lang.Double totalAmountPaid;
 
+	@org.kie.api.definition.type.Label(value = "Total Days")
+	private java.lang.Integer totalDays;
+
+	public LoanRateHistory() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.time.LocalDate getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(java.time.LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public java.time.LocalDate getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(java.time.LocalDate endDate) {
+		this.endDate = endDate;
+	}
+
+	public java.lang.Double getRateOfInterest() {
+		return this.rateOfInterest;
+	}
+
+	public void setRateOfInterest(java.lang.Double rateOfInterest) {
+		this.rateOfInterest = rateOfInterest;
+	}
+
+	public java.lang.Double getTotalAmountPaid() {
+		return this.totalAmountPaid;
+	}
+
+	public void setTotalAmountPaid(java.lang.Double totalAmountPaid) {
+		this.totalAmountPaid = totalAmountPaid;
+	}
+
+	public java.lang.Integer getTotalDays() {
+		return this.totalDays;
+	}
+
+	public void setTotalDays(java.lang.Integer totalDays) {
+		this.totalDays = totalDays;
+	}
+
+	public LoanRateHistory(java.lang.Long id, java.time.LocalDate startDate,
+			java.time.LocalDate endDate, java.lang.Double rateOfInterest,
+			java.lang.Double totalAmountPaid, java.lang.Integer totalDays) {
+		this.id = id;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.rateOfInterest = rateOfInterest;
+		this.totalAmountPaid = totalAmountPaid;
+		this.totalDays = totalDays;
+	}
 
 }
