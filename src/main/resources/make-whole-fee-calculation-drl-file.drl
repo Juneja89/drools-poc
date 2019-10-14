@@ -28,8 +28,10 @@ end
 rule "Terminate Actual lose of interest Calculation"
    agenda-group "loan calculation"
    auto-focus true
+   
 when
 		prepayment : Prepayment( paymentType == "Termination Actual Loss Of Interest" )
+		
 	then
 	    System.out.println("welcome to the Terminate Actual lose of interest Calculation..!!");
 	    double totalFees = 0.0;
@@ -40,6 +42,6 @@ when
 	    }
 	    System.out.println("totalFees3::"+totalFees);
 		modify( prepayment ) {
-				setTotalFee( 10000.0 );
+				setTotalFee( totalFees );
 		}
 end
