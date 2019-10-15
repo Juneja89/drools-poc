@@ -49,8 +49,8 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Actual Interest Paid")
 	private java.util.List<java.lang.Double> actualInterestPaid;
 
-	@org.kie.api.definition.type.Label(value = "Min Interest Amount")
-	private java.lang.Double minInterestAmount;
+	@org.kie.api.definition.type.Label(value = "Flat interest")
+	private java.lang.Double flatInterest;
 
 	public Prepayment() {
 	}
@@ -153,12 +153,12 @@ public class Prepayment implements java.io.Serializable {
 		this.actualInterestPaid = actualInterestPaid;
 	}
 
-	public java.lang.Double getMinInterestAmount() {
-		return this.minInterestAmount;
+	public java.lang.Double getFlatInterest() {
+		return this.flatInterest;
 	}
 
-	public void setMinInterestAmount(java.lang.Double minInterestAmount) {
-		this.minInterestAmount = minInterestAmount;
+	public void setFlatInterest(java.lang.Double flatInterest) {
+		this.flatInterest = flatInterest;
 	}
 
 	public Prepayment(java.lang.Long id, double totalInterest,
@@ -169,7 +169,7 @@ public class Prepayment implements java.io.Serializable {
 			java.lang.Double calculateTotalFee,
 			java.lang.String feeCalculationFormula,
 			java.util.List<java.lang.Double> actualInterestPaid,
-			java.lang.Double minInterestAmount) {
+			java.lang.Double flatInterest) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -182,7 +182,7 @@ public class Prepayment implements java.io.Serializable {
 		this.calculateTotalFee = calculateTotalFee;
 		this.feeCalculationFormula = feeCalculationFormula;
 		this.actualInterestPaid = actualInterestPaid;
-		this.minInterestAmount = minInterestAmount;
+		this.flatInterest = flatInterest;
 	}
 
 }
