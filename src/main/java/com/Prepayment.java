@@ -49,8 +49,11 @@ public class Prepayment implements java.io.Serializable {
 	@javax.persistence.ElementCollection(fetch = javax.persistence.FetchType.EAGER)
 	private java.util.List<java.lang.Double> actualInterestPaid;
 
-	@org.kie.api.definition.type.Label(value = "Period Start Date")
+	@org.kie.api.definition.type.Label("Period Start Date")
 	private java.time.LocalDate periodStartDate;
+
+	@org.kie.api.definition.type.Label(value = "Period End Date")
+	private java.time.LocalDate periodEndDate;
 
 	public Prepayment() {
 	}
@@ -161,6 +164,14 @@ public class Prepayment implements java.io.Serializable {
 		this.periodStartDate = periodStartDate;
 	}
 
+	public java.time.LocalDate getPeriodEndDate() {
+		return this.periodEndDate;
+	}
+
+	public void setPeriodEndDate(java.time.LocalDate periodEndDate) {
+		this.periodEndDate = periodEndDate;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Double amount, java.lang.Integer noOfMonths,
 			java.lang.Integer daysToTerminate, java.lang.Double totalFee,
@@ -170,7 +181,8 @@ public class Prepayment implements java.io.Serializable {
 			java.lang.String feeCalculationFormula,
 			java.lang.Double flatInterest,
 			java.util.List<java.lang.Double> actualInterestPaid,
-			java.time.LocalDate periodStartDate) {
+			java.time.LocalDate periodStartDate,
+			java.time.LocalDate periodEndDate) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -184,6 +196,7 @@ public class Prepayment implements java.io.Serializable {
 		this.flatInterest = flatInterest;
 		this.actualInterestPaid = actualInterestPaid;
 		this.periodStartDate = periodStartDate;
+		this.periodEndDate = periodEndDate;
 	}
 
 }
