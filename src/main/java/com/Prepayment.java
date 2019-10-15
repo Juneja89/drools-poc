@@ -20,9 +20,6 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Amount")
 	private Double amount;
 
-	@org.kie.api.definition.type.Label("Date")
-	private java.time.LocalDate date;
-
 	@org.kie.api.definition.type.Label("No Of Months")
 	private java.lang.Integer noOfMonths;
 
@@ -48,9 +45,12 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Flat interest")
 	private java.lang.Double flatInterest;
 
+	@org.kie.api.definition.type.Label("Actual Interest Paid")
 	@javax.persistence.ElementCollection(fetch = javax.persistence.FetchType.EAGER)
-	@org.kie.api.definition.type.Label(value = "Actual Interest Paid")
 	private java.util.List<java.lang.Double> actualInterestPaid;
+
+	@org.kie.api.definition.type.Label(value = "Period Start Date")
+	private java.time.LocalDate periodStartDate;
 
 	public Prepayment() {
 	}
@@ -61,14 +61,6 @@ public class Prepayment implements java.io.Serializable {
 
 	public void setId(java.lang.Long id) {
 		this.id = id;
-	}
-
-	public java.time.LocalDate getDate() {
-		return this.date;
-	}
-
-	public void setDate(java.time.LocalDate date) {
-		this.date = date;
 	}
 
 	public java.lang.Integer getNoOfMonths() {
@@ -161,19 +153,27 @@ public class Prepayment implements java.io.Serializable {
 		this.actualInterestPaid = actualInterestPaid;
 	}
 
+	public java.time.LocalDate getPeriodStartDate() {
+		return this.periodStartDate;
+	}
+
+	public void setPeriodStartDate(java.time.LocalDate periodStartDate) {
+		this.periodStartDate = periodStartDate;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
-			java.lang.Double amount, java.time.LocalDate date,
-			java.lang.Integer noOfMonths, java.lang.Integer daysToTerminate,
-			java.lang.Double totalFee, java.lang.String paymentType,
+			java.lang.Double amount, java.lang.Integer noOfMonths,
+			java.lang.Integer daysToTerminate, java.lang.Double totalFee,
+			java.lang.String paymentType,
 			java.util.List<com.LoanRateHistory> loanRateHistoryList,
 			java.lang.Double calculateTotalFee,
 			java.lang.String feeCalculationFormula,
 			java.lang.Double flatInterest,
-			java.util.List<java.lang.Double> actualInterestPaid) {
+			java.util.List<java.lang.Double> actualInterestPaid,
+			java.time.LocalDate periodStartDate) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
-		this.date = date;
 		this.noOfMonths = noOfMonths;
 		this.daysToTerminate = daysToTerminate;
 		this.totalFee = totalFee;
@@ -183,6 +183,7 @@ public class Prepayment implements java.io.Serializable {
 		this.feeCalculationFormula = feeCalculationFormula;
 		this.flatInterest = flatInterest;
 		this.actualInterestPaid = actualInterestPaid;
+		this.periodStartDate = periodStartDate;
 	}
 
 }
