@@ -43,7 +43,7 @@ public class Prepayment implements java.io.Serializable {
 	private java.util.List<com.LoanRateHistory> loanRateHistoryList;
 
 	@org.kie.api.definition.type.Label("Calculate Total Fee")
-	private String calculateTotalFee;
+	private Double calculateTotalFee;
 
 	@org.kie.api.definition.type.Label("Fee Calculation Formula")
 	private java.lang.String feeCalculationFormula;
@@ -140,11 +140,11 @@ public class Prepayment implements java.io.Serializable {
 		this.feeCalculationFormula = feeCalculationFormula;
 	}
 
-	public java.lang.String getCalculateTotalFee() {
+	public java.lang.Double getCalculateTotalFee() {
 		return this.calculateTotalFee;
 	}
 
-	public void setCalculateTotalFee(java.lang.String calculateTotalFee) {
+	public void setCalculateTotalFee(java.lang.Double calculateTotalFee) {
 		this.calculateTotalFee = calculateTotalFee;
 	}
 
@@ -154,7 +154,7 @@ public class Prepayment implements java.io.Serializable {
 			java.lang.Double actualInterestPaid, java.lang.Double totalFee,
 			java.lang.String paymentType,
 			java.util.List<com.LoanRateHistory> loanRateHistoryList,
-			java.lang.String calculateTotalFee,
+			java.lang.Double calculateTotalFee,
 			java.lang.String feeCalculationFormula) {
 		this.id = id;
 		this.totalInterest = totalInterest;
