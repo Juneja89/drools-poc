@@ -25,7 +25,7 @@ when
 	         totalInterestPaid += actualInterestPaid;
 	     }
 		modify( prepayment ) {
-				setTotalFee( 200000 - totalInterestPaid );
+				setTotalFee( prepayment.getFlatInterest() - totalInterestPaid );
 		}
 end
 
