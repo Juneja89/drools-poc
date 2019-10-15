@@ -36,7 +36,7 @@ public class Prepayment implements java.io.Serializable {
 	private java.lang.String paymentType;
 
 	@org.kie.api.definition.type.Label("Loan rate History List")
-	@javax.persistence.OneToMany(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
+	@javax.persistence.OneToMany(fetch = javax.persistence.FetchType.EAGER, cascade = {javax.persistence.CascadeType.ALL})
 	private java.util.List<com.LoanRateHistory> loanRateHistoryList;
 
 	@org.kie.api.definition.type.Label("Calculate Total Fee")
@@ -46,8 +46,11 @@ public class Prepayment implements java.io.Serializable {
 	private java.lang.String feeCalculationFormula;
 
 	@javax.persistence.ElementCollection(fetch = javax.persistence.FetchType.EAGER)
-	@org.kie.api.definition.type.Label(value = "Actual Interest Paid")
+	@org.kie.api.definition.type.Label("Actual Interest Paid")
 	private java.util.List<java.lang.Double> actualInterestPaid;
+
+	@org.kie.api.definition.type.Label(value = "Min Interest Amount")
+	private java.lang.Double minInterestAmount;
 
 	public Prepayment() {
 	}
@@ -150,6 +153,14 @@ public class Prepayment implements java.io.Serializable {
 		this.actualInterestPaid = actualInterestPaid;
 	}
 
+	public java.lang.Double getMinInterestAmount() {
+		return this.minInterestAmount;
+	}
+
+	public void setMinInterestAmount(java.lang.Double minInterestAmount) {
+		this.minInterestAmount = minInterestAmount;
+	}
+
 	public Prepayment(java.lang.Long id, double totalInterest,
 			java.lang.Double amount, java.time.LocalDate date,
 			java.lang.Integer noOfMonths, java.lang.Integer daysToTerminate,
@@ -157,7 +168,8 @@ public class Prepayment implements java.io.Serializable {
 			java.util.List<com.LoanRateHistory> loanRateHistoryList,
 			java.lang.Double calculateTotalFee,
 			java.lang.String feeCalculationFormula,
-			java.util.List<java.lang.Double> actualInterestPaid) {
+			java.util.List<java.lang.Double> actualInterestPaid,
+			java.lang.Double minInterestAmount) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -170,6 +182,7 @@ public class Prepayment implements java.io.Serializable {
 		this.calculateTotalFee = calculateTotalFee;
 		this.feeCalculationFormula = feeCalculationFormula;
 		this.actualInterestPaid = actualInterestPaid;
+		this.minInterestAmount = minInterestAmount;
 	}
 
 }
