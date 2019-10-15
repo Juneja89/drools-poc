@@ -45,11 +45,12 @@ public class Prepayment implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Fee Calculation Formula")
 	private java.lang.String feeCalculationFormula;
 
-	@org.kie.api.definition.type.Label("Actual Interest Paid")
-	private double actualInterestPaid;
-
 	@org.kie.api.definition.type.Label("Flat interest")
 	private java.lang.Double flatInterest;
+
+	@javax.persistence.ElementCollection(fetch = javax.persistence.FetchType.EAGER)
+	@org.kie.api.definition.type.Label(value = "Actual Interest Paid")
+	private java.util.List<java.lang.Double> actualInterestPaid;
 
 	public Prepayment() {
 	}
@@ -151,11 +152,12 @@ public class Prepayment implements java.io.Serializable {
 		this.flatInterest = flatInterest;
 	}
 
-	public double getActualInterestPaid() {
+	public java.util.List<java.lang.Double> getActualInterestPaid() {
 		return this.actualInterestPaid;
 	}
 
-	public void setActualInterestPaid(double actualInterestPaid) {
+	public void setActualInterestPaid(
+			java.util.List<java.lang.Double> actualInterestPaid) {
 		this.actualInterestPaid = actualInterestPaid;
 	}
 
@@ -165,8 +167,9 @@ public class Prepayment implements java.io.Serializable {
 			java.lang.Double totalFee, java.lang.String paymentType,
 			java.util.List<com.LoanRateHistory> loanRateHistoryList,
 			java.lang.Double calculateTotalFee,
-			java.lang.String feeCalculationFormula, double actualInterestPaid,
-			java.lang.Double flatInterest) {
+			java.lang.String feeCalculationFormula,
+			java.lang.Double flatInterest,
+			java.util.List<java.lang.Double> actualInterestPaid) {
 		this.id = id;
 		this.totalInterest = totalInterest;
 		this.amount = amount;
@@ -178,8 +181,8 @@ public class Prepayment implements java.io.Serializable {
 		this.loanRateHistoryList = loanRateHistoryList;
 		this.calculateTotalFee = calculateTotalFee;
 		this.feeCalculationFormula = feeCalculationFormula;
-		this.actualInterestPaid = actualInterestPaid;
 		this.flatInterest = flatInterest;
+		this.actualInterestPaid = actualInterestPaid;
 	}
 
 }
