@@ -1,0 +1,10 @@
+import com.Applicant;
+
+rule "process application"
+when
+    applicant: Applicant(age>30, money>1000, approval=false)
+then
+    modify(applicant){
+        setApproved(true);
+    }
+end
