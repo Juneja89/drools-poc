@@ -2,7 +2,7 @@ import com.Applicant;
 
 rule "process application"
 when
-    applicant: Applicant(age>30, money>1000, approval=false)
+    applicant: Applicant(age>30, money>1000, approved=false)
 then
     modify(applicant){
         setApproved(true);
